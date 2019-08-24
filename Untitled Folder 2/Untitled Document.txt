@@ -1,0 +1,37 @@
+import abc
+def array_left_rotation(a, n, k):
+  for i in range(k):
+    f = a[0]
+    a.remove(f)
+    a.append(f)
+  return a
+
+def array_right_rotation(a, n, k):
+  for i in range(k):
+    f = a[n-1]
+    for j in range(n-1,-1,-1):
+      a[j]=a[j-1]
+    a[0]=f
+  return a
+
+  
+print("one")
+abc.sallu()
+print("two")
+n, k = map(int, input().strip().split(' '))
+a = list(map(int, input().strip().split(' ')))
+#answer = array_left_rotation(a, n, k);
+ch = int(input("Enter your Choice.\n1. for Right Rotation.\n2. For Left Rotation.\n"))
+
+if ch == 1:
+  print("Array is :"+str(a))
+  answer = array_right_rotation(a, n, k);
+  print("Right roration of array is :",end = " ")
+elif ch == 2:
+  print("Array is :"+str(a))
+  answer = array_left_rotation(a, n, k);
+  print("Left roration of array is :",end = " ")
+
+print (' '.join(map(str,answer)))
+
+
